@@ -1,0 +1,30 @@
+[
+  {
+    "date": "2025-01-26T00:05:08Z",
+    "amount": 18002,
+    "category": "Utility",
+    "description": "Water bill",
+    "party": "City Water Works"
+  },
+  {
+    "date": "2025-01-29T11:55:57Z",
+    "amount": 10659,
+    "category": "Utility",
+    "description": "Internet bill",
+    "party": "Mediacom"
+  },
+  {
+    "date": "2025-02-01T01:42:57Z",
+    "amount": 2504,
+    "category": "Groceries",
+    "description": "Groceries",
+    "party": "Walmart"
+  },
+  {
+    "date": "2025-02-01T06:20:06Z",
+    "amount": 2504,
+    "category": "Transportation",
+    "description": "Gas",
+    "party": "Casey's"
+  }
+]
