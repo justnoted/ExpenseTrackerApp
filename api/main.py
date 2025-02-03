@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import database as db
 
-app = FastAPI()
+app = FastAPI()     # Run "fastapi run main.py" to use with Expenses App
 
 @app.get('/')
 def index():
@@ -9,11 +9,7 @@ def index():
 
 @app.get('/expenses')
 def get_all_expenses():
-    expenses = db.get_all_expenses()        # May consider a better method to change ObjectId to str, IF needed
-    for expense in expenses:
-        expense['_id'] = str(expense['_id'])
-
-    return expenses
+    return db.get_items(db.get_all_expenses())
 
 @app.get('/debts')
 def get_all_expenses():
