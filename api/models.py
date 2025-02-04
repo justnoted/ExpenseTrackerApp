@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 class Expense(BaseModel):
-    date: str
+    date: str | None = None
     amount: int
     category: str
     description: str
