@@ -4,8 +4,8 @@ export default function Page() {
   return (
     <View style={styles.container}>
       <View style={styles.main}>
-        <Text style={styles.title}>Hello World</Text>
-        <Text style={styles.subtitle}>here we go again lol</Text>
+        <Text style={styles.title}>Tracking your debts</Text>
+        <Text style={styles.subtitle}>In development. Similar to Expenses, lists out debts, adds to Expenses when debts are paid.</Text>
       </View>
     </View>
   );
