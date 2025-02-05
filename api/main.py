@@ -1,11 +1,29 @@
 from bson import ObjectId
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from starlette import status
-from datetime import datetime
+from datetime import datetime, timezone
 import database as db
 from models import *
 
 app = FastAPI()     # Run "fastapi run main.py" to use with Expenses App
+
+origins = [
+    "http://localhost.tiangolo.com",
+    "https://localhost.tiangolo.com",
+    "http://localhost",
+    "http://localhost:8080",
+    "http://localhost:8081",
+
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get('/')
 def index():
@@ -28,7 +46,7 @@ def get_expense_by_id(expense_id: str):
 
 @app.post("/expenses", status_code=status.HTTP_201_CREATED)
 def add_expense(expense: Expense):
-    expense.date = datetime.now().isoformat()
+    expense.date = datetime.now(timezone.utc).isoformat()
     result = db.create_expense(expense)
 
     if not result:
